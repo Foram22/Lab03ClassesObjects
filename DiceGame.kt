@@ -3,6 +3,7 @@
 /*  Program Description: This is small kotlin command line program based on classes and objects. In this program, I am going to create 
                          dice using contructor of Die class and display results. */
 
+import Die 
 class DiceGame {
 
     fun run() {
