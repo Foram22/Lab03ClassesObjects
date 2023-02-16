@@ -38,5 +38,27 @@ class DiceGame {
         println("New current side up for ${d20.type} is ${d20.currentSide}")
         println("New current side up for ${d10.type} is ${d10.currentSide}")
 
+        // Set the cureent side of dice d20 to 20
+        println("Setting the ${d20.type} to show 20...")
+        d20.currentSide = 20
+        println("The side up is now ${d20.currentSide}.")
+
+        println("Creating five d6...")
+        val dice = Array(5) {
+            Die()
+        }
+        var count = 0
+        var matched = false
+        while(!matched){
+            count++
+            dice.forEach { it.roll() }
+            matched = dice.all { it.currentSide == dice[0].currentSide }
+        }
+        println("It took $count rolls.")
     }
+}
+
+fun main() {
+    val diceGame = DiceGame()
+    diceGame.run()
 }
